@@ -19,12 +19,6 @@ const Home = () => {
     setRefreshing(false);
   };
 
-  // one flatlist
-  // with list header
-  // and horizontal flatlist
-
-  //  we cannot do that with just scrollview as there's both horizontal and vertical scroll (two flat lists, within trending)
-
   return (
     <SafeAreaView className="bg-primary">
       <FlatList
@@ -44,7 +38,7 @@ const Home = () => {
             <View className="flex justify-between items-start flex-row mb-6">
               <View>
                 <Text className="font-pmedium text-sm text-gray-100">
-                  Welcome Back
+                  Bienvenido de nuevo
                 </Text>
                 <Text className="text-2xl font-psemibold text-white">
                   JSMastery
@@ -64,7 +58,7 @@ const Home = () => {
 
             <View className="w-full flex-1 pt-5 pb-8">
               <Text className="text-lg font-pregular text-gray-100 mb-3">
-                Latest Videos
+                Últimos Videos
               </Text>
 
               <Trending posts={latestPosts ?? []} />
@@ -73,8 +67,8 @@ const Home = () => {
         )}
         ListEmptyComponent={() => (
           <EmptyState
-            title="No Videos Found"
-            subtitle="No videos created yet"
+            title="No se encontraron videos"
+            subtitle="Aún no se han creado videos"
           />
         )}
         refreshControl={

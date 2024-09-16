@@ -51,7 +51,7 @@ const Create = () => {
       }
     } else {
       setTimeout(() => {
-        Alert.alert("Document picked", JSON.stringify(result, null, 2));
+        Alert.alert("Documento seleccionado", JSON.stringify(result, null, 2));
       }, 100);
     }
   };
@@ -63,7 +63,7 @@ const Create = () => {
       !form.thumbnail |
       !form.video
     ) {
-      return Alert.alert("Please provide all fields");
+      return Alert.alert("Por favor, completa todos los campos");
     }
 
     setUploading(true);
@@ -73,7 +73,7 @@ const Create = () => {
         userId: user.$id,
       });
 
-      Alert.alert("Success", "Post uploaded successfully");
+      Alert.alert("Éxito", "Publicación subida con éxito");
       router.push("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
@@ -92,19 +92,19 @@ const Create = () => {
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView className="px-4 my-6">
-        <Text className="text-2xl text-white font-psemibold">Upload Video</Text>
+        <Text className="text-2xl text-white font-psemibold">Subir Video</Text>
 
         <FormField
-          title="Video Title"
+          title="Título del Video"
           value={form.title}
-          placeholder="Give your video a catchy title..."
+          placeholder="Dale a tu video un título atractivo..."
           handleChangeText={(e) => setForm({ ...form, title: e })}
           otherStyles="mt-10"
         />
 
         <View className="mt-7 space-y-2">
           <Text className="text-base text-gray-100 font-pmedium">
-            Upload Video
+            Subir Video
           </Text>
 
           <TouchableOpacity onPress={() => openPicker("video")}>
@@ -122,7 +122,7 @@ const Create = () => {
                   <Image
                     source={icons.upload}
                     resizeMode="contain"
-                    alt="upload"
+                    alt="subir"
                     className="w-1/2 h-1/2"
                   />
                 </View>
@@ -133,7 +133,7 @@ const Create = () => {
 
         <View className="mt-7 space-y-2">
           <Text className="text-base text-gray-100 font-pmedium">
-            Thumbnail Image
+            Imagen en Miniatura
           </Text>
 
           <TouchableOpacity onPress={() => openPicker("image")}>
@@ -148,11 +148,11 @@ const Create = () => {
                 <Image
                   source={icons.upload}
                   resizeMode="contain"
-                  alt="upload"
+                  alt="subir"
                   className="w-5 h-5"
                 />
                 <Text className="text-sm text-gray-100 font-pmedium">
-                  Choose a file
+                  Elegir un archivo
                 </Text>
               </View>
             )}
@@ -160,15 +160,15 @@ const Create = () => {
         </View>
 
         <FormField
-          title="AI Prompt"
+          title="Texto de IA"
           value={form.prompt}
-          placeholder="The AI prompt of your video...."
+          placeholder="El texto de IA de tu video...."
           handleChangeText={(e) => setForm({ ...form, prompt: e })}
           otherStyles="mt-7"
         />
 
         <CustomButton
-          title="Submit & Publish"
+          title="Enviar y Publicar"
           handlePress={submit}
           containerStyles="mt-7"
           isLoading={uploading}

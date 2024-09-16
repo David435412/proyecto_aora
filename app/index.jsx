@@ -36,8 +36,8 @@ const Welcome = () => {
 
           <View className="relative mt-5">
             <Text className="text-3xl text-white font-bold text-center">
-              Discover Endless{"\n"}
-              Possibilities with{" "}
+              Descubre posibilidades{"\n"}
+              infinitas con{" "}
               <Text className="text-secondary-200">Aora</Text>
             </Text>
 
@@ -49,12 +49,12 @@ const Welcome = () => {
           </View>
 
           <Text className="text-sm font-pregular text-gray-100 mt-7 text-center">
-            Where Creativity Meets Innovation: Embark on a Journey of Limitless
-            Exploration with Aora
+            Donde la creatividad se encuentra con la innovación: Embárcate en un
+            viaje de exploración ilimitada con Aora
           </Text>
 
           <CustomButton
-            title="Continue with Email"
+            title="Continuar con Correo Electrónico"
             handlePress={() => router.push("/sign-in")}
             containerStyles="w-full mt-7"
           />
